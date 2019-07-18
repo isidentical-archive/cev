@@ -1,0 +1,7 @@
+try:
+    import cev
+    import codecs
+except ImportError:
+    print('Walrus37 is not properly configured!')
+else:
+    codecs.register(cev.translate)
