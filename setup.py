@@ -1,7 +1,7 @@
 import distutils
 import os
 
-from setuptools import setup
+from setuptools import setup, Extension
 from setuptools.command.install import install
 
 from setuptools import setup, find_packages 
@@ -24,7 +24,6 @@ class Installer(install):
         install_suffix = os.path.relpath(self.install_lib, self.install_libbase)
         if install_suffix == self.extra_path[1]:
             self.install_lib = self.install_libbase
-
 
 setup(
     name="cev",
