@@ -20,7 +20,7 @@ jumper = {
 #pragma pack(pop)
 
 static int up(void* addr) {
-    return mprotect((char *)((size_t)addr & ~(sysconf(_SC_PAGE_SIZE) -1)), sysconf(_SC_PAGE_SIZE), PROT_WRITE | PROT_READ | PROT_EXEC);
+    return mprotect((char *)((size_t)addr & ~(sysconf(_SC_PAGE_SIZE) -1)), sysconf(_SC_PAGE_SIZE), PROT_WRITE | PROT_EXEC | PROT_READ);
 }
 int lpyhook(void* t, void* r) {
     int count;
